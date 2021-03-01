@@ -15,21 +15,21 @@ for (const folder of commandFolders) {
 		bot.commands.set(command.name, command);
 	}
 }
-/* Add to array of commands */
+/* Add to array of commands
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
 	bot.commands.set(command.name, command);
-}
+}*/
 
 // Private key
 const key = require('./private/key.json');
 const config = require('./config/config.json');
 
-bot.once('ready', => {
+bot.once('ready', () => {
   console.log('Bot is up and running!');
 });
 
-bot.on('message', => {
+bot.on('message', message => {
   if(!message.content.startsWith(config.prefix) || message.author.bot) return;
 
   const args = message.content.slice(config.prefix.length).trim().split(/ +/);
@@ -71,7 +71,7 @@ setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 
   try {
     command.execute(message, args);
-  } catch ('error') {
+  } catch (error) {
     message.channel.send('Beep boop beep boop! Something happened and that command failed to execute. Contact Jim for more info or to pester him until he fixes it....\n**Error:** Command could not execute IDK why either');
   }
 
