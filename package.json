@@ -18,6 +18,8 @@
   "homepage": "https://github.com/CoolJim/deluxe-ytbot#readme",
   "dependencies": {
     "discord.js": "^12.5.1",
-    "fs": "0.0.1-security"
+    "fs": "0.0.1-security",
+    "prettier": "^2.2.1",
+    "prettierrc": "0.0.0-5"
   }
 }
