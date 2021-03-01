@@ -53,6 +53,7 @@ module.exports = {
       data.push(`**Usage:** ${prefix}${command.name} ${command.usage}`);
     if (command.admin == true)
       data.push( `**Requires ADMINISTRATOR permissions**`);
+    
 
     data.push(`**Cooldown:** ${command.cooldown || 3} second(s)`);
     data.push(`**Category:** ${command.category || 'None specified'}`);

@@ -49,6 +49,9 @@ bot.on('message', message => {
  if (command.admin && !message.author.hasPermission('ADMINISTRATOR')) {
    return message.channel.send(`Oi! You don't have ADMINISTRATOR permissions, and this command requires it.`);
  }
+ if (command.permission.length && !message.author.hasPermission(command.permission)) {
+	 return message.channel.send(`Hey ${message.author}, you need the permission ${command.permission} to execute this command!!!`)
+ }
 
  if (!cooldowns.has(command.name)) {
 	cooldowns.set(command.name, new Discord.Collection());
@@ -56,7 +59,7 @@ bot.on('message', message => {
 
 const now = Date.now();
 const timestamps = cooldowns.get(command.name);
-const cooldownAmount = (command.cooldown || 3) * 1000;
+const cooldownAmount = (command.cooldown || 2) * 1000;
 
 if (timestamps.has(message.author.id)) {
   const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
