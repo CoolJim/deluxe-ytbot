@@ -5,13 +5,14 @@ module.exports = {
   aliases: ["commands"],
   usage: "[command name]",
   cooldown: 5,
+  category: 'Info',
   execute(message, args) {
     const data = [];
-    const { commands } = message.bot;
+    const { commands } = message.client;
 
     if (!args.length) {
       data.push("Here's a list of all my commands:");
-      data.push(commands.map((command) => command.name).join(", "));
+      data.push(commands.map((command) => command.name).join("\n"));
       data.push(
         `\nYou can send \`${prefix}help [command name]\` to get info on a specific command!`
       );
