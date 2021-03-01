@@ -1,0 +1,23 @@
+{
+  "name": "deluxeyt-bot",
+  "version": "1.0.0",
+  "description": "A bot for the DELUXE YT Discordf",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo HIII"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CoolJim/deluxe-ytbot.git"
+  },
+  "author": "Jim Ke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CoolJim/deluxe-ytbot/issues"
+  },
+  "homepage": "https://github.com/CoolJim/deluxe-ytbot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "fs": "0.0.1-security"
+  }
+}
