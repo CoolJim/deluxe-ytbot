@@ -57,7 +57,7 @@ bot.on("message", (message) => {
     );
   }
   if (
-    command.permission.length &&
+    command.permission &&
     !message.author.hasPermission(command.permission)
   ) {
     return message.channel.send(
