@@ -5,7 +5,7 @@ module.exports = {
   aliases: ["commands"],
   usage: "[command name]",
   cooldown: 5,
-  category: 'Info',
+  category: "Info",
   execute(message, args) {
     const data = [];
     const { commands } = message.client;
@@ -52,11 +52,10 @@ module.exports = {
     if (command.usage)
       data.push(`**Usage:** ${prefix}${command.name} ${command.usage}`);
     if (command.admin == true)
-      data.push( `**Requires ADMINISTRATOR permissions**`);
-    
+      data.push(`**Requires ADMINISTRATOR permissions**`);
 
     data.push(`**Cooldown:** ${command.cooldown || 3} second(s)`);
-    data.push(`**Category:** ${command.category || 'None specified'}`);
+    data.push(`**Category:** ${command.category || "None specified"}`);
 
     message.channel.send(data, { split: true });
   },
