@@ -51,18 +51,13 @@ bot.on("message", (message) => {
       return message.channel.send(reply);
     }
   }
-  if (command.admin && !message.author.hasPermission("ADMINISTRATOR")) {
-    return message.channel.send(
-      `Oi! You don't have ADMINISTRATOR permissions, and this command requires it.`
-    );
-  }
-  if (
-    command.permission &&
-    !message.author.hasPermission(command.permission)
-  ) {
-    return message.channel.send(
-      `Hey ${message.author}, you need the permission ${command.permission} to execute this command!!!`
-    );
+  if (command.permissions) {
+    const authorPerms = message.channel.permissionsFor(message.author);
+    if (!authorPerms || !authorPerms.has(command.permissions)) {
+      return message.reply(
+        "You can not do this, as you lack the sufficent perms."
+      );
+    }
   }
 
   if (!cooldowns.has(command.name)) {
@@ -97,21 +92,10 @@ bot.on("message", (message) => {
   }
 });
 
-// Exports
+// export
 module.exports = {
-  parseMention: function (mention) {
-    // The id is the first and only match found by the RegEx.
-    const matches = mention.match(/^<@!?(\d+)>$/);
-
-    // If supplied variable was not a mention, matches will be null instead of an array.
-    if (!matches) return;
-
-    // However the first element in the matches array will be the entire mention, not just the ID,
-    // so use index 1.
-    const id = matches[1];
-
-    return client.users.cache.get(id);
-  },
+  bot: bot,
 };
+
 // Login
 bot.login(key.token);

@@ -1,3 +1,5 @@
+// Imports
+const index = require("./index.js");
 // Exports
 module.exports = {
   parseMention: function (mention) {
@@ -11,6 +13,6 @@ module.exports = {
     // so use index 1.
     const id = matches[1];
 
-    return client.users.cache.get(id);
+    return index.bot.users.cache.get(id);
   },
 };
