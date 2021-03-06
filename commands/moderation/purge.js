@@ -11,11 +11,12 @@ module.exports = {
       return message.channel.send(
         `${message.author}, please specify how many messages to delete.`
       );
-    var del = args[0];
-    if (Number.isNaN(del) || !del > 0 || !del < 99)
+    var del = parseInt(args[0]);
+    if (Number.isNaN(del))
       return message.channel.send(
-        `${message.author}, specify a valid number <99`
+        `${message.author}, specify a valid number`
       );
+    if (!del > 0 || !del < 99) return message.channel.send(`Number needs to be <99 and >0`);
     message.channel.bulkDelete(del, true).catch((err) => {
       console.error(err);
       message.channel.send(
