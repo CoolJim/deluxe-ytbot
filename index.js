@@ -1,6 +1,7 @@
 // Dependencides
 const Discord = require("discord.js");
 const fs = require("fs");
+const request = require("request");
 
 // Intitialize
 const bot = new Discord.Client();
@@ -29,6 +30,13 @@ const config = require("./config/config.json");
 
 bot.once("ready", () => {
   console.log("Bot is up and running!");
+  bot.user.setPresence({
+        game: {
+            name: 'yeet',
+            type: 'CUSTOM_STATUS'
+        },
+        status: 'online'
+    });
 });
 
 bot.on("message", (message) => {

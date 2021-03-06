@@ -1,5 +1,5 @@
 const tools = require("../../tools.js");
-const discord = require('discord.js');
+const discord = require("discord.js");
 const index = require("../../index.js");
 
 function parseMention(mention) {
