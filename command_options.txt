@@ -1,6 +1,5 @@
 name: 'string',
 description: 'string',
-admin: boolean,
 args: boolean,
 catrgory: 'string',
 usage: 'string',
