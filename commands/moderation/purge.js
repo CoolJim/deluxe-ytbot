@@ -16,7 +16,7 @@ module.exports = {
       return message.channel.send(
         `${message.author}, specify a valid number`
       );
-    if (del < 2 || del > 100) return message.channel.send(`Number needs to be <100 and >1 (2-99)`);
+    if (del < 2 || del > 100) return message.channel.send(`Number needs to be <100 and >1 (number can be 2-99, including 2 & 99)`);
     message.channel.bulkDelete(del, true).catch((err) => {
       console.error(err);
       message.channel.send(
