@@ -31,8 +31,8 @@ module.exports = {
     var IP = args[0];
     var port = args[1] || 25565;
     var url = "http://mcapi.us/server/status?ip=" + IP + "&port=" + port;
-    message.channel.send('Waiting for a response...');
-    message.channel.send('Pinging ' + IP + ' at port ' + port);
+    message.channel.send("Waiting for a response...");
+    message.channel.send("Pinging " + IP + " at port " + port);
     var status = await getStatus(url);
     if (status == "Offline") {
       status = "Server is OFFLINE.";
