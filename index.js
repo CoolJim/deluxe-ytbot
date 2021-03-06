@@ -30,13 +30,7 @@ const config = require("./config/config.json");
 
 bot.once("ready", () => {
   console.log("Bot is up and running!");
-  bot.user.setPresence({
-        game: {
-            name: 'yeet',
-            type: 'CUSTOM_STATUS'
-        },
-        status: 'online'
-    });
+  bot.user.setActivity("you", { type: "WATCHING" });
 });
 
 bot.on("message", (message) => {
