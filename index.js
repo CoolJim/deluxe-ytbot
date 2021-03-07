@@ -3,11 +3,13 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const request = require("request");
 const db = require('quick.db');
+const random = require('random');
 
 // Intitialize
 const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 const cooldowns = new Discord.Collection();
+const economy = new db.table('economy');
 /* Commands - FS */
 const commandFolders = fs.readdirSync("./commands");
 for (const folder of commandFolders) {
@@ -37,6 +39,8 @@ bot.once("ready", () => {
 bot.on("message", (message) => {
   // Currency
   if(message.author.bot) return;
+  economy.add(`${message.author.id}_cash`, 1);
+
   // Command
   if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 
