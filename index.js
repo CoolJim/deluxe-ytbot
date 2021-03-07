@@ -37,6 +37,7 @@ bot.once("ready", () => {
 });
 
 bot.on("message", (message) => {
+  
   // Currency
   if(message.author.bot) return;
   economy.add(`${message.author.id}_cash`, 1);

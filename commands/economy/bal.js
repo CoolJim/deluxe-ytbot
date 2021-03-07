@@ -6,6 +6,7 @@ module.exports = {
   usage: '[mention]',
   description: 'Check your wallet balance.',
   execute(message, bot, economy, args) {
+    console.log('log`d');
     const user = message.author || message.mentions.users.first();
     if(!user) return message.reply(`Hey, you need to actually mention someone properly.`);
     let money = economy.get(`${user.id}_cash`);
@@ -17,6 +18,7 @@ module.exports = {
     .setTitle(`${user}'s balance`)
     .setDescription(`Wallet: ${money}\nBank: ${bank}`)
     .setTimestamp();
+    console.log('log2')
   message.channel.send(balance);
 
 
