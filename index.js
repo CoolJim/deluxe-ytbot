@@ -110,7 +110,6 @@ bot.on("message", (message) => {
 // export
 module.exports = {
   bot: bot,
-
 };
 
 // Login

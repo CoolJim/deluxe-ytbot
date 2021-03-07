@@ -7,7 +7,6 @@ module.exports = {
   usage: "[mention]",
   description: "Check your wallet balance.",
   execute(message, bot, args) {
-
     const user = message.mentions.users.first() || message.author;
 
     let money = db.get(`${user.id}_cash`);
