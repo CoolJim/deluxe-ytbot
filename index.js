@@ -41,7 +41,7 @@ bot.on("message", (message) => {
   if(message.author.bot) return;
   economy.add(`${message.author.id}_cash`, 1);
   if(random.int((min = 1), (max = 69420))) {
-    message.channel.send(`Congratulations, ${message.author}! You have found a vault... containing 1000 dollars!`);
+    message.channel.send(`Congratulations, ${message.author}! You have found a cash vault... containing 1000 dollars!`);
     economy.add(`${message.author.id}_cash`, 1000);
   }
 
