@@ -40,6 +40,10 @@ bot.on("message", (message) => {
   // Currency
   if(message.author.bot) return;
   economy.add(`${message.author.id}_cash`, 1);
+  if(random.int((min = 1), (max = 69420))) {
+    message.channel.send(`Congratulations, ${message.author}! You have found a vault... containing 1000 dollars!`);
+    economy.add(`${message.author.id}_cash`, 1000);
+  }
 
   // Command
   if (!message.content.startsWith(config.prefix) || message.author.bot) return;
@@ -105,6 +109,7 @@ bot.on("message", (message) => {
 // export
 module.exports = {
   bot: bot,
+  economy: economy,
 };
 
 // Login
