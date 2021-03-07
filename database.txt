@@ -1,0 +1,42 @@
+All database keys and options
+
+_cash
+Cash available inside wallet.
+
+_bank
+Cash in bank. Get total by adding bank and cash.
+
+_item-name
+See full item list in items.txt
+
+_health
+Player health
+
+_pet
+This is a master key, containing more keys
+
+_pet_owns
+Boolean, checks if player owns a pet or not
+_pet_name
+Pet name
+_pet_age
+Pet age
+_pet_health
+Pet health
+_pet_xp
+Pet XP
+_pet_skill
+1 = Treasure, finds coins
+2 = Regen, regens pet health and player health
+3 = Attack, attack others
+4 = Defense, 100%+ more likely to defend, hurting attackers
+5 = Booster Pet, special power which boosts coins, etc.
+
+_defense
+Ability to defend against theft. 0-100 chance of defense
+
+_charisma
+Ability to beg. A number 0-100, likelihood of successful begging.
+
+_dev
+Boolean, is dev or not
