@@ -2,14 +2,14 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const request = require("request");
-const db = require('quick.db');
-const random = require('random');
+const db = require("quick.db");
+const random = require("random");
 
 // Intitialize
 const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 const cooldowns = new Discord.Collection();
-const economy = new db.table('economy');
+const economy = new db.table("economy");
 /* Commands - FS */
 const commandFolders = fs.readdirSync("./commands");
 for (const folder of commandFolders) {
@@ -37,12 +37,13 @@ bot.once("ready", () => {
 });
 
 bot.on("message", (message) => {
-  
   // Currency
-  if(message.author.bot) return;
+  if (message.author.bot) return;
   economy.add(`${message.author.id}_cash`, 1);
-  if(random.int((min = 1), (max = 69420)) == 69) {
-    message.channel.send(`Congratulations, ${message.author}! You have found a cash vault... containing 1000 dollars!`);
+  if (random.int((min = 1), (max = 69420)) == 69) {
+    message.channel.send(
+      `Congratulations, ${message.author}! You have found a cash vault... containing 1000 dollars!`
+    );
     economy.add(`${message.author.id}_cash`, 1000);
   }
 

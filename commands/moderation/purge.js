@@ -3,7 +3,7 @@ module.exports = {
   aliases: ["bulkdelete", "delete", "delte", "remove", "prune", "clear"],
   permissions: "MANAGE_CHANNELS",
   args: true,
-  usage: '<messages>',
+  usage: "<messages>",
   description:
     "Prune up to 99 messages. Cannot delete messages over 2 weeks old.",
   execute(message, args, bot) {
@@ -13,10 +13,11 @@ module.exports = {
       );
     const del = parseInt(args[0]);
     if (isNaN(del))
+      return message.channel.send(`${message.author}, specify a valid number`);
+    if (del < 2 || del > 100)
       return message.channel.send(
-        `${message.author}, specify a valid number`
+        `Number needs to be <100 and >1 (number can be 2-99, including 2 & 99)`
       );
-    if (del < 2 || del > 100) return message.channel.send(`Number needs to be <100 and >1 (number can be 2-99, including 2 & 99)`);
     message.channel.bulkDelete(del, true).catch((err) => {
       console.error(err);
       message.channel.send(
