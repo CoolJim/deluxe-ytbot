@@ -2,6 +2,7 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const request = require("request");
+const db = require('quick.db');
 
 // Intitialize
 const bot = new Discord.Client();
@@ -34,6 +35,9 @@ bot.once("ready", () => {
 });
 
 bot.on("message", (message) => {
+  // Currency
+  if(message.author.bot) return;
+  // Command
   if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 
   const args = message.content.slice(config.prefix.length).trim().split(/ +/);
