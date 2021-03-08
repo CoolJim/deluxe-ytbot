@@ -1,5 +1,6 @@
 const db = require("quick.db");
 const Discord = require("discord.js");
+const random = require("random");
 
 module.exports = {
   name: "balance",
