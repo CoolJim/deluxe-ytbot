@@ -6,7 +6,7 @@ module.exports = {
   aliases: ["bal", "wallet", "cash"],
   usage: "[mention]",
   description: "Check your wallet + bank balance.",
-  execute(message, bot, args) {
+  execute(message, args, bot) {
     const user = message.mentions.users.first() || message.author;
 
     let money = db.get(`${user.id}_cash`);

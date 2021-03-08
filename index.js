@@ -128,7 +128,7 @@ bot.on("message", (message) => {
   setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 
   try {
-    command.execute(message, args);
+    command.execute(message, args, bot);
   } catch (error) {
     message.channel.send(
       "Beep boop beep boop! Something happened and that command failed to execute. Contact Jim for more info or to pester him until he fixes it....\n**Error:** Command could not execute IDK why either"
