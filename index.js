@@ -45,6 +45,35 @@ bot.on("message", (message) => {
     );
     db.add(`${message.author.id}_cash`, 1000);
   }
+  // check if user is new
+  if (db.get(`${message.author.id}_new`) == null) {
+    // Get user for DM later
+    let user = bot.users.cache.get(message.author.id);
+    // Randomise charisma + defense
+    let charisma = random.int((min = 1), (max = 99));
+    // Maximum defense is 70 to enourage people to buy shields using IGC (in game currency)
+    let defense = random.int((min = 1), (max = 70));
+    // Make sure they cannot randomise charisma again (or defense)
+    db.set(`${message.author.id}_new`, false);
+    db.set(`${message.author.id}_charisma`, charisma);
+    db.set(`${message.author.id}_defense`, defense);
+    const joinNotice = new Discord.MessageEmbed()
+      .setTitle(`Welcome to DeluxeBot RPG!`)
+      .setColor("RANDOM")
+      .setDescription(
+        `Hi ${message.author.username}, welcome to the DeluxeBot RPG! Execute .help for more info. Here are your stats:\nCharisma: ${charisma}\nDefense: ${defense}. Enjoy your experience!`
+      );
+    try {
+      user.send(joinNotice);
+    } catch (e) {
+      console.log(
+        "Something happened, could not admit a user to the RPG! (send them the welcome)"
+      );
+      console.error(e);
+    } finally {
+      console.log(`New user ${message.author.username} has joined the RPG`);
+    }
+  }
 
   // Command
   if (!message.content.startsWith(config.prefix) || message.author.bot) return;

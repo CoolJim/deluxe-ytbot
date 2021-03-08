@@ -1,5 +1,8 @@
 All database keys and options
 
+_new
+If null, assigns charisma and defense
+
 _cash
 Cash available inside wallet.
 
