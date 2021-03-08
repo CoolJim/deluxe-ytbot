@@ -5,7 +5,7 @@ module.exports = {
   name: "balance",
   aliases: ["bal", "wallet", "cash"],
   usage: "[mention]",
-  description: "Check your wallet balance.",
+  description: "Check your wallet + bank balance.",
   execute(message, bot, args) {
     const user = message.mentions.users.first() || message.author;
 
