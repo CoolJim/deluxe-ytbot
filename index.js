@@ -61,7 +61,7 @@ bot.on("message", (message) => {
       .setTitle(`Welcome to DeluxeBot RPG!`)
       .setColor("RANDOM")
       .setDescription(
-        `Hi ${message.author.username}, welcome to the DeluxeBot RPG! Execute .help for more info. Here are your stats:\nCharisma: ${charisma}\nDefense: ${defense}. Enjoy your experience!`
+        `Hi ${message.author.username}, welcome to the DeluxeBot RPG! Execute .help for more info. Here are your stats:\nCharisma: ${charisma}\nDefense: ${defense}.\nEnjoy your experience!`
       );
     try {
       user.send(joinNotice);
