@@ -8,6 +8,7 @@ module.exports = {
   permissions: "KICK_MEMBERS",
   args: "<offender>",
   category: "Moderation",
+  guild: true,
   async execute(message, args, bot) {
     if (!message.guild.me.hasPermission("KICK_MEMBERS"))
       return message.channel.send("You gotta give me perms to kick!");

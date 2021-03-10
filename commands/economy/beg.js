@@ -19,14 +19,15 @@ module.exports = {
       .setColor("RANDOM");
 
     if (wallet >= 6000) {
-      return message.reply(
+      return message.channel.send(
         `Yo ${user}, you're wayyyy too rich to be a poor beggar! Leave that to some poor dude.`
       );
     }
-    if (chance == 1) {
-      message.reply(successful);
-    }
-    else {
+    console.log('It should work');
+    if (random == 1) {
+      message.channel.send(successful);
+      db.add(`${user.id}_cash`, money);
+    } else {
       message.reply(`Whoops, they told you to go away!`);
     }
   },
