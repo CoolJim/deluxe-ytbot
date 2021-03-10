@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 // Styles
 const error = `An error was encountered executing that command`;
-const errorImg = "https://discord.com/channels/734674763435343872/734674763812700231/819111482830094336";
+const errorImg = "https://cdn.discordapp.com/attachments/734674763812700231/819111482704789534/error.png";
 const link = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 
 const guildOnly = new Discord.MessageEmbed()
