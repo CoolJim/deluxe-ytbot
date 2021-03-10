@@ -4,7 +4,7 @@ const fs = require("fs");
 const request = require("request");
 const db = require("quick.db");
 const random = require("random");
-const embeds = require('./embeds.js');
+const embeds = require("./embeds.js");
 
 // Intitialize
 const bot = new Discord.Client();
@@ -88,9 +88,9 @@ bot.on("message", (message) => {
     );
 
   if (!command) return;
-  if(command.guild && message.channel.type == 'dm') {
+  if (command.guild && message.channel.type == "dm") {
     // COMBAK: Fill in the embed
-    return message.channel.send(embeds.guildOnly); 
+    return message.channel.send(embeds.guildOnly);
   }
 
   if (command.args && !args.length) {

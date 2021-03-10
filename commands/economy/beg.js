@@ -23,7 +23,7 @@ module.exports = {
         `Yo ${user}, you're wayyyy too rich to be a poor beggar! Leave that to some poor dude.`
       );
     }
-    console.log('It should work');
+    console.log("It should work");
     if (random == 1) {
       message.channel.send(successful);
       db.add(`${user.id}_cash`, money);

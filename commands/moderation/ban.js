@@ -1,7 +1,6 @@
 const tools = require("../../tools.js");
 const discord = require("discord.js");
 
-
 module.exports = {
   name: "ban",
   description: "Ban someone - Forever",
