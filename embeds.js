@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 // Styles
 const error = `An error was encountered executing that command`;
-const errorImg = "./assets/img/error.png";
+const errorImg = "https://discord.com/channels/734674763435343872/734674763812700231/819111482830094336";
 const link = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 
 const guildOnly = new Discord.MessageEmbed()
@@ -10,8 +10,7 @@ const guildOnly = new Discord.MessageEmbed()
   .setDescription(
     `This command can only be executed within a server, and cannot be executed directly!`
   )
-  .attachFiles([errorImg])
-  .setImage('attatchment://error.png')
+  .setImage(errorImg)
   .setURL(link)
   .setTimestamp()
   .setColor("RANDOM")
