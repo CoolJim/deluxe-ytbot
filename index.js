@@ -90,7 +90,7 @@ bot.on("message", (message) => {
   if (!command) return;
   if (command.guild && message.channel.type == "dm") {
     // COMBAK: Fill in the embed
-    return message.channel.send(embeds.guildOnly);
+    return message.channel.send(embeds);
   }
 
   if (command.args && !args.length) {
