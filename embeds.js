@@ -10,7 +10,8 @@ const guildOnly = new Discord.MessageEmbed()
   .setDescription(
     `This command can only be executed within a server, and cannot be executed directly!`
   )
-  .setThumbnail(errorImg)
+  .attatchFiles([errorImg])
+  .setThumbnail('attatchment://error.png')
   .setURL(link)
   .setTimestamp()
   .setColor("RANDOM")
