@@ -135,7 +135,7 @@ bot.on("message", (message) => {
   try {
     command.execute(message, args, bot);
   } catch (error) {
-    message.channel.send(embeds);
+    message.channel.send(embeds.miscError);
   }
 });
 
