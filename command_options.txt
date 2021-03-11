@@ -6,3 +6,4 @@ usage: 'string',
 cooldown: number,
 aliases: ['string', 'array'],
 permissions: 'PERMISSION_NODE',
+execute(message, args, bot)
