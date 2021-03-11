@@ -35,7 +35,7 @@ module.exports = {
       );
     }
     console.log("It should work");
-    if (random == 1) {
+    if (random == 1 || random == 2 || random == 3) {
       message.channel.send(successful);
       db.add(`${user.id}_cash`, money);
     } else {
