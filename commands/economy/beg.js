@@ -2,17 +2,29 @@ const db = require("quick.db");
 const Discord = require("discord.js");
 const random = require("random");
 
+function rands(min, max) {
+  return Math.floor(
+    Math.random() * (max - min) + min
+  )
+}
+
 module.exports = {
   name: "beg",
   description: "Short of money? See if begging will work...",
   aliases: ["begging", "beggd"],
   execute(message, args, bot) {
+    console.log('Got somewhere');
     const user = message.author;
     let wallet = db.get(`${user.id}_cash`);
+    console.log('Get wallet');
     let charisma = db.get(`${user.id}_charisma`);
+    console.log('Got charisma');
     let chance = 100 - charisma;
-    let random = random.int((min = 0), (max = chance));
-    let money = random.int((min = 10), (max = charisma));
+    console.log('Got chance');
+    let random = rands(0, chance);
+    let money = rands(10, charisma);
+    console.log('Randomised money');
+    console.log('Past the let area');
     const successful = new Discord.MessageEmbed()
       .setAuthor("A kind stranger")
       .setDescription("A random stranger has given you " + money + " dollars!")
