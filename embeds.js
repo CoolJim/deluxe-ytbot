@@ -2,7 +2,8 @@ const Discord = require("discord.js");
 
 // Styles
 const error = `An error was encountered executing that command`;
-const errorImg = "https://cdn.discordapp.com/attachments/734674763812700231/819111482704789534/error.png";
+const errorImg =
+  "https://cdn.discordapp.com/attachments/734674763812700231/819111482704789534/error.png";
 const link = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 
 const guildOnly = new Discord.MessageEmbed()
@@ -16,5 +17,14 @@ const guildOnly = new Discord.MessageEmbed()
   .setColor("RANDOM")
   .setFooter("Never gonna give you up, never gonna let you down, never...");
 
+const miscError = new Discord.MessageEmbed()
+  .setTitle(error)
+  .setDescription(
+    `Whoops! This command failed to execute. We don't know why though, maybe try pestering Jim until he fixes it??`
+  )
+  .setImage(errorImg)
+  .setURL("https://discordjs.org")
+  .setColor("RANDOM")
+  .setFooter("No please actually don't spam me!");
 // Exports
-module.exports = guildOnly;
+module.exports = (guildOnly, miscError);
