@@ -3,7 +3,7 @@ const fs = require('fs');
 module.exports = {
   name: "reload",
   description: 'Reload a command without having to restart the entire bot. Good for Jim',
-  cooldown: 10
+  cooldown: 10,
   category: 'Bot',
   args: true,
   usage: '<command>',
