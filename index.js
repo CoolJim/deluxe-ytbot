@@ -90,7 +90,7 @@ bot.on("message", (message) => {
   if (!command) return;
   if (command.guild && message.channel.type == "dm") {
     // COMBAK: Fill in the embed
-    return message.channel.send(embeds);
+    return message.channel.send(embeds.guildOnly);
   }
 
   if (command.args && !args.length) {
@@ -135,9 +135,7 @@ bot.on("message", (message) => {
   try {
     command.execute(message, args, bot);
   } catch (error) {
-    message.channel.send(
-      "Beep boop beep boop! Something happened and that command failed to execute. Contact Jim for more info or to pester him until he fixes it....\n**Error:** Command could not execute IDK why either"
-    );
+    message.channel.send(embeds.miscError);
   }
 });
 
