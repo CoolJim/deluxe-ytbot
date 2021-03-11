@@ -34,8 +34,8 @@ module.exports = {
         `Yo ${user}, you're wayyyy too rich to be a poor beggar! Leave that to some poor dude.`
       );
     }
-    console.log("It should work");
-    if (random == 1 || random == 2 || random == 3) {
+    console.log(random);
+    if (random == /a{1, 15}/) {
       message.channel.send(successful);
       db.add(`${user.id}_cash`, money);
     } else {
