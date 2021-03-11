@@ -58,6 +58,7 @@ bot.on("message", (message) => {
     db.set(`${message.author.id}_new`, false);
     db.set(`${message.author.id}_charisma`, charisma);
     db.set(`${message.author.id}_defense`, defense);
+    db.set(`${message.author.id}_health`, 100);
     const joinNotice = new Discord.MessageEmbed()
       .setTitle(`Welcome to DeluxeBot RPG!`)
       .setColor("RANDOM")
