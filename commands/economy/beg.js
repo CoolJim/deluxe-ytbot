@@ -13,6 +13,7 @@ module.exports = {
   description: "Short of money? See if begging will work...",
   aliases: ["begging", "beggd"],
   cooldown: 60,
+  category: 'Economy'
   execute(message, args, bot) {
 
     const user = message.author;
