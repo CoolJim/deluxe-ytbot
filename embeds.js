@@ -27,4 +27,4 @@ const miscError = new Discord.MessageEmbed()
   .setColor("RANDOM")
   .setFooter("No please actually don't spam me!");
 // Exports
-module.exports = (guildOnly, miscError);
+module.exports = {guildOnly, miscError};
