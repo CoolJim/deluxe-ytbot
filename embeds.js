@@ -28,5 +28,11 @@ const miscError = new Discord.MessageEmbed()
   .setURL("https://discordjs.org")
   .setColor("RANDOM")
   .setFooter("No please actually don't spam me!");
+
+const inventoryEmpty = new Discord.MessageEmbed()
+  .setTitle('You do not own any items')
+  .setDescription('Better buy some...')
+  .setColour('RANDOM');
+
 // Exports
-module.exports = { guildOnly, miscError };
+module.exports = { guildOnly, miscError, inventoryEmpty };
