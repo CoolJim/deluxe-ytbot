@@ -3,9 +3,7 @@ const Discord = require("discord.js");
 const random = require("random");
 
 function rands(min, max) {
-  return Math.floor(
-    Math.random() * (max - min) + min
-  )
+  return Math.floor(Math.random() * (max - min) + min);
 }
 
 module.exports = {
@@ -13,9 +11,8 @@ module.exports = {
   description: "Short of money? See if begging will work...",
   aliases: ["begging", "beggd"],
   cooldown: 60,
-  category: 'Economy'
+  category: "Economy",
   execute(message, args, bot) {
-
     const user = message.author;
     let wallet = db.get(`${user.id}_cash`);
 

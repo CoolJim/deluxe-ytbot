@@ -7,7 +7,7 @@ const errorImg =
 const link = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 
 const guildOnly = new Discord.MessageEmbed()
-  .setAuthor('guildOnly TYPE command')
+  .setAuthor("guildOnly TYPE command")
   .setTitle(error)
   .setDescription(
     `This command can only be executed within a server, and cannot be executed directly!`
@@ -19,7 +19,7 @@ const guildOnly = new Discord.MessageEmbed()
   .setFooter("Never gonna give you up, never gonna let you down, never...");
 
 const miscError = new Discord.MessageEmbed()
-  .setAuthor('tryCatch MISC error TYPE error')
+  .setAuthor("tryCatch MISC error TYPE error")
   .setTitle(error)
   .setDescription(
     `Whoops! This command failed to execute. We don't know why though, maybe try pestering Jim until he fixes it??`
@@ -29,4 +29,4 @@ const miscError = new Discord.MessageEmbed()
   .setColor("RANDOM")
   .setFooter("No please actually don't spam me!");
 // Exports
-module.exports = {guildOnly, miscError};
+module.exports = { guildOnly, miscError };
