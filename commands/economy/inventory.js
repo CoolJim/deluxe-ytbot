@@ -11,7 +11,7 @@ module.exports = {
   category: 'Economy',
   async execute(message, args, bot) {
     let user = message.author;
-    let items = db.get('user.id.items') || `${user.username} has no items`;
+    let items = db.get(user.id) || `${user.username} has no items`;
 
     const inv = new Discord.MessageEmbed()
       .setTitle(`${user.username}'s items'`)

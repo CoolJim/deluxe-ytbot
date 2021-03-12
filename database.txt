@@ -1,5 +1,8 @@
 All database keys and options
 
+<user>.id
+Their inventory
+
 _new
 If null, assigns charisma and defense
 
