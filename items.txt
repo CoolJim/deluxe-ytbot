@@ -1,2 +1,5 @@
 _bandage
 Heals 15 health. $30, Sell $20.
+
+_medal
+A medal. IDK why tho. $2500, Sell $1000
