@@ -1,0 +1,4 @@
+name: 'string',
+cost: number
+sell: number
+amount: number

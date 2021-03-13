@@ -1,18 +1,38 @@
-const Discord = require('discord.js');
-const db = require('quick.db');
-const embeds = require('../../embeds.js');
+const Discord = require("discord.js");
+const db = require("quick.db");
+const fs = require("fs");
+const embeds = require("../../embeds.js");
+const itemsCollection = new Discord.Collection();
+
+// Collect item files
+const itemFiles = fs
+  .readdirSync("../../items/")
+  .filter((file) => file.endsWith(".js"));
+for (const file of itemFiles) {
+  const item = require(`../../items/${file}`);
+  // Push new item to collection itemsCollection
+  itemsCollection.set(item.name, item);
+}
 
 module.exports = {
-  name: 'buy',
-  aliases: ['storebuy', 'purchase'],
-  description: 'Buy an item from the store',
+  name: "buy",
+  aliases: ["storebuy", "purchase"],
+  description: "Buy an item from the store",
   cooldown: 20,
-  category: 'Economy',
+  category: "Economy",
   args: true,
   async execute(message, args, bot) {
     let noCash = `Hey ${message.author}, you don't have enough money to buy that. Consider withdrawing some cash.`;
-    let bought = `Successfully bought!`
+    let bought = `Successfully bought!`;
     let wallet = await db.get(`${message.author.id}_cash`);
+    if (!itemsCollection.has(args[0]))
+      return message.channel.send("That item is non-existent... Whoops!");
+    if (wallet < item.cost) return message.reply(noCash);
+    await db.push(message.author.id, `${item.name}`);
+    await db.add(`${message.author.id}_${item.name}`, item.amount);
+    await db.subtract(`${message.author.id}_cash`, item.cost);
+    message.reply(bought);
+    /*
     switch (args[0]) {
       case 'bandage':
         if(wallet < 30) return message.channel.send(noCash);
@@ -30,6 +50,6 @@ module.exports = {
       message.channel.send('Hey, are you sure that item ACUTALLY exists?');
 
     }
-
-  }
-}
+    */
+  },
+};
