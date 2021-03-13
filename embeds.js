@@ -32,7 +32,7 @@ const miscError = new Discord.MessageEmbed()
 const inventoryEmpty = new Discord.MessageEmbed()
   .setTitle('You do not own any items')
   .setDescription('Better buy some...')
-  .setColour('RANDOM');
+  .setColor('RANDOM');
 
 // Exports
 module.exports = { guildOnly, miscError, inventoryEmpty };
