@@ -88,7 +88,7 @@ bot.on("message", (message) => {
       (cmd) => cmd.aliases && cmd.aliases.includes(commandName)
     );
 
-  if (!command) return;
+  if (!command || command.disabled) return;
   if (command.guild && message.channel.type == "dm") {
     // COMBAK: Fill in the embed
     return message.channel.send(embeds.guildOnly);
