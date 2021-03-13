@@ -1,0 +1,2 @@
+_bandage
+Heals 15 health. $30, Sell $20.
