@@ -3,10 +3,11 @@ const db = require("quick.db");
 const fs = require("fs");
 const embeds = require("../../embeds.js");
 const itemsCollection = new Discord.Collection();
+const path = require('path');
 
 // Collect item files
 const itemFiles = fs
-  .readdirSync("../../items/")
+  .readdirSync(path.join(__dirname, './items'))
   .filter((file) => file.endsWith(".js"));
 for (const file of itemFiles) {
   const item = require(`../../items/${file}`);
@@ -23,15 +24,16 @@ module.exports = {
   args: true,
   async execute(message, args, bot) {
     let noCash = `Hey ${message.author}, you don't have enough money to buy that. Consider withdrawing some cash.`;
-    let bought = `Successfully bought!`;
     let wallet = await db.get(`${message.author.id}_cash`);
+
     if (!itemsCollection.has(args[0]))
       return message.channel.send("That item is non-existent... Whoops!");
+    const item = itemsCollection.get(args[0]);
     if (wallet < item.cost) return message.reply(noCash);
     await db.push(message.author.id, `${item.name}`);
     await db.add(`${message.author.id}_${item.name}`, item.amount);
     await db.subtract(`${message.author.id}_cash`, item.cost);
-    message.reply(bought);
+    message.reply(`You have successfully bought ${item.name} for ${item.cost}`);
     /*
     switch (args[0]) {
       case 'bandage':
