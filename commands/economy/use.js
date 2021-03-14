@@ -2,6 +2,7 @@ const db = require("quick.db");
 const Discord = require("discord.js");
 const fs = require("fs");
 const embeds = require("../../embeds.js");
+const path = require('path');
 const itemsCollection = new Discord.Collection();
 
 // Collect item files
