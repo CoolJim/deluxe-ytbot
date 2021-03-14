@@ -10,7 +10,7 @@ const itemFiles = fs
   .readdirSync(path.join(__dirname, './items'))
   .filter((file) => file.endsWith(".js"));
 for (const file of itemFiles) {
-  const item = require(`../../items/${file}`);
+  const item = require(path.join(__dirname, `./items/${file}`));
   // Push new item to collection itemsCollection
   itemsCollection.set(item.name, item);
 }
