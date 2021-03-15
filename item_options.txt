@@ -1,4 +1,7 @@
 name: 'string',
+description: 'string',
 cost: number
 sell: number
 amount: number
+collectable: boolean
+execute(message, args, db)

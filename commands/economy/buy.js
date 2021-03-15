@@ -5,6 +5,7 @@ const embeds = require("../../embeds.js");
 const itemsCollection = new Discord.Collection();
 const path = require('path');
 
+
 // Collect item files
 const itemFiles = fs
   .readdirSync(path.join(__dirname, './items'))
@@ -14,15 +15,17 @@ for (const file of itemFiles) {
   // Push new item to collection itemsCollection
   itemsCollection.set(item.name, item);
 }
+let storeItems = itemsCollection.array();
 
 module.exports = {
   name: "buy",
   aliases: ["storebuy", "purchase"],
   description: "Buy an item from the store",
-  cooldown: 20,
+  cooldown: 7,
   category: "Economy",
   args: true,
   async execute(message, args, bot) {
+    if (!args[0]) return message.channel.send(`${message.author}, please provide something to buy.`)
     let noCash = `Hey ${message.author}, you don't have enough money to buy that. Consider withdrawing some cash.`;
     let wallet = await db.get(`${message.author.id}_cash`);
 
