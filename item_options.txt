@@ -4,4 +4,6 @@ cost: number
 sell: number
 amount: number
 collectable: boolean
+sale: number
+onSale: boolean
 execute(message, args, db)
