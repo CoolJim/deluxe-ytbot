@@ -1,7 +1,7 @@
 name: 'string',
 description: 'string',
 args: boolean,
-catrgory: 'string',
+category: 'string',
 usage: 'string',
 cooldown: number,
 aliases: ['string', 'array'],
