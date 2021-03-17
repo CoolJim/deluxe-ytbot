@@ -21,7 +21,7 @@ module.exports = {
   aliases: ["consume", "useit", "itemize"],
   description: "Use an item (if it can be used.)",
   args: true,
-  cooldown: 10,
+  cooldown: 5,
   category: "Economy",
   execute(message, args, bot) {
     // inventory.
