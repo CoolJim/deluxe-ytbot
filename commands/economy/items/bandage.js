@@ -6,7 +6,7 @@ module.exports = {
   amount: 1,
   execute(message, args, db) {
     let health = db.get(`${message.author.id}_health`);
-
+    if(health = 100) return message.channel.send(`${message.author}, no need to heal, you are already all healed up!`);
     if(health + 15 >= 100) {
       let heal = 100 - health;
       db.add(`${message.author.id}_health`, heal);
