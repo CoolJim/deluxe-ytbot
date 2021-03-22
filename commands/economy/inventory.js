@@ -11,12 +11,19 @@ module.exports = {
   category: "Economy",
   async execute(message, args, bot) {
     let user = message.author;
-    let items = db.get(user.id) || `${user.username} has no items`;
-
+    let userItems = db.get(`${user.id}`);
+    let items = ["bandage", "medal"];
+    let data = [];
+    items.forEach((element) => {
+      if (userItems.includes(element)) {
+        data.push(element + ' ' + db.get(`${user.id}_${element}`) + "\n");
+      }
+    });
     const inv = new Discord.MessageEmbed()
-      .setTitle(`${user.username}'s items'`)
-      .setColor("RANDOM")
-      .addField("Inventory", items);
+      .setAuthor(user.username)
+      .setTitle("Inventory")
+      .setDescription(data)
+      .setTimestamp();
     message.channel.send(inv);
   },
 };
