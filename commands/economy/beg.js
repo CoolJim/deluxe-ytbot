@@ -34,7 +34,7 @@ module.exports = {
       );
     }
     console.log(random);
-    if (random == /a{1, 15}/) {
+    if (/[1,6,9]/.test(random) == true) {
       message.channel.send(successful);
       db.add(`${user.id}_cash`, money);
     } else {
