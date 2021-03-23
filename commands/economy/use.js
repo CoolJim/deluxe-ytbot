@@ -25,7 +25,6 @@ module.exports = {
   execute(message, args, bot) {
     // inventory.
     var inv = db.get(message.author.id);
-    console.log(1);
 
     if (!args[0]) return message.reply("Ya gonna use something or no?");
     if (!itemsCollection.has(args[0]))
@@ -36,13 +35,11 @@ module.exports = {
       return message.reply(
         `Hey! Ya can't use something that you don't own... Its capitalism, whether ya like it ... or not`
       );
-    console.log(3);
-    console.log(4);
+    let item = itemsCollection.get(args[0]);
     db.subtract(`${message.author.id}_${args[0]}`, 1);
 
     try {
       item.execute(message, args, db);
-      message.channel.send(`Alright! ${message.author} I used ${args[0]}!`);
     } catch (e) {
       message.reply(`Hey ${message.author}, an error occured!\nError: ${e}`);
     }
