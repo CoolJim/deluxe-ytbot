@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const db = require("quick.db");
 const embeds = require("../../embeds.js");
-const fs = require('fs')
+const fs = require("fs");
 const path = require("path");
 const itemsCollection = new Discord.Collection();
 
@@ -28,7 +28,11 @@ module.exports = {
     let data = [];
     storeItems.forEach((element) => {
       let item = itemsCollection.get(element.name);
-      data.push(`${item.name}: ${db.get(`${user.id}_${item.name}`) || 0}`)
+      if (
+        db.get(`${user.id}_${item.name}`) != undefined &&
+        db.get(`${user.id}_${item.name}`) != 0
+      )
+        data.push(`${item.name}: ${db.get(`${user.id}_${item.name}`) || 0}`);
     });
     const inv = new Discord.MessageEmbed()
       .setAuthor(user.username)
