@@ -36,6 +36,7 @@ module.exports = {
         `Hey! Ya can't use something that you don't own... Its capitalism, whether ya like it ... or not`
       );
     let item = itemsCollection.get(args[0]);
+    if(item.collect) return message.channel.send(`${message.author}, ${item.name} is a Collectable and cannot be used`)
     db.subtract(`${message.author.id}_${args[0]}`, 1);
 
     try {
