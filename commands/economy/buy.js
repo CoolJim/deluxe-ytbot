@@ -33,7 +33,6 @@ module.exports = {
       return message.channel.send("That item is non-existent... Whoops!");
     const item = itemsCollection.get(args[0]);
     if (wallet < item.cost) return message.reply(noCash);
-    await db.push(message.author.id, `${item.name}`);
     await db.add(`${message.author.id}_${item.name}`, item.amount);
     await db.subtract(`${message.author.id}_cash`, item.cost);
     message.reply(`You have successfully bought ${item.name} for ${item.cost}`);
