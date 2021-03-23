@@ -6,4 +6,6 @@ amount: number
 collectable: boolean
 sale: number
 onSale: boolean
+collect: boolean
 execute(message, args, db)
+
