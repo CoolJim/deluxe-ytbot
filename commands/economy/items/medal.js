@@ -4,4 +4,5 @@ module.exports = {
   sell: 2000,
   amount: 1,
   collect: true,
+  description: 'A simple medal.',
 };
