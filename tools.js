@@ -3,7 +3,7 @@ const chalk = require('chalk')
 // Exports
 module.exports = {
   errorReport(e) {
-    log(chalk.bgRed.bold(`Caught error`));
-    log(chalk.red(e));
+    console.log(chalk.bgRed.bold(`Caught error`));
+    console.log(chalk.red(e));
   }
 }
