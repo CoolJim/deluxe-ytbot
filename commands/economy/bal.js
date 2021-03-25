@@ -6,6 +6,7 @@ module.exports = {
   name: "balance",
   aliases: ["bal", "wallet", "cash"],
   usage: "[mention]",
+  category: 'Economy',
   description: "Check your wallet + bank balance.",
   execute(message, args, bot) {
     const user = message.mentions.users.first() || message.author;

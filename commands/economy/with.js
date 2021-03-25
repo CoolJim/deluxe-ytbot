@@ -12,6 +12,7 @@ module.exports = {
   aliases: ["with", "take", "unbank", "wallet"],
   args: true,
   usage: "<amount>",
+  category: 'Economy',
   execute(message, args, bot) {
     const user = message.author;
     const bank = db.get(`${user.id}_bank`);

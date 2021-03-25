@@ -1,9 +1,11 @@
+/** @format */
+
 const db = require("quick.db");
 const Discord = require("discord.js");
 
 module.exports = {
   name: "stats",
-  aliases: ["styat", "stat", "mystats", "mystat"],
+  aliases: ["styat", "stat", "mystats", "mystat", "profile"],
   description: "Check you stats (charisma, etc)",
   category: "RPG",
   usage: "[mention]",
@@ -13,6 +15,7 @@ module.exports = {
     let charisma = await db.get(`${user.id}_charisma`);
     let defense = await db.get(`${user.id}_defense`);
     let health = await db.get(`${user.id}_health`);
+    let shield = (await db.get(`${user.id}_shield`)) || "Not purchased";
     if (health == null) db.set(`${user.id}_health`, 100);
     // Get health again after reset
     health = await db.get(`${user.id}_health`);
@@ -39,6 +42,13 @@ module.exports = {
           name: "Health",
           value:
             "You start with 100 health, (the Maximum), and can be damaged by attacks. You can heal too, with items",
+          inline: true,
+        },
+
+        {
+          name: "Shield",
+          value:
+            "Like a second healthbar, this gets depleted once someone or something attacks you. See `.upgrades` for more information",
           inline: true,
         }
       )

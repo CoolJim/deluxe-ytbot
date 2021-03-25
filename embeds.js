@@ -1,3 +1,5 @@
+/** @format */
+
 const Discord = require("discord.js");
 
 // Styles
@@ -33,6 +35,13 @@ const inventoryEmpty = new Discord.MessageEmbed()
   .setTitle("You do not own any items")
   .setDescription("Better buy some...")
   .setColor("RANDOM");
-
+const upgradeList = new Discord.MessageEmbed()
+  .setTitle("All upgrades possible:")
+  .addField(
+    "Shield",
+    "This is like an extra healthbar, it basically protects you against threats by sacrificing itself.", true
+  )
+  .setColor("RANDOM")
+  .setTimestamp();
 // Exports
-module.exports = { guildOnly, miscError, inventoryEmpty };
+module.exports = { guildOnly, miscError, inventoryEmpty, upgradeList };
