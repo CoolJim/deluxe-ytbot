@@ -29,4 +29,4 @@ jobs:
     - name: install linter
       run: npm i
     - name: run prettier
-     run: npx prettier . --w
+      run: npx prettier . --w
