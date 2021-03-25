@@ -1,10 +1,11 @@
 {
   "name": "deluxeyt-bot",
-  "version": "1.0.0",
-  "description": "A bot for the DELUXE YT Discordf",
+  "version": "1.1.0",
+  "description": "A simple, useful bot to help you manage any Discord server, with an economy system built in",
   "main": "index.js",
   "scripts": {
-    "test": "echo HIII"
+    "test": "echo Working",
+    "prettier": "npx prettier . -w"
   },
   "repository": {
     "type": "git",
