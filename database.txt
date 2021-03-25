@@ -18,6 +18,12 @@ See full item list in items.txt
 _health
 Player health
 
+_shield 
+Player shield
+
+_upgrades
+How many upgrades they have purchased
+
 _pet
 This is a master key, containing more keys
 
