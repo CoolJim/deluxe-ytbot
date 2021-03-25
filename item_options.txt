@@ -7,5 +7,7 @@ collectable: boolean
 sale: number
 onSale: boolean
 collect: boolean
+restricted: boolean
+# If restricted, it will not appear on the store.
 execute(message, args, db)
 
