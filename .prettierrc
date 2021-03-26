@@ -1,8 +1,7 @@
 {
-    "useTabs": true,
-    "semi": true,
-    "bracketSpacing": true,
-    "insertPragma": true,
-    "endOfLine": "crlf"
-
+	"useTabs": true,
+	"semi": true,
+	"bracketSpacing": true,
+	"insertPragma": true,
+	"endOfLine": "crlf"
 }
