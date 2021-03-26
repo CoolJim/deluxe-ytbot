@@ -1,6 +1,6 @@
 {
 	"name": "deluxeyt-bot",
-	"version": "1.1.0",
+	"version": "1.2.0",
 	"description": "A simple, useful bot to help you manage any Discord server, with an economy system built in",
 	"main": "index.js",
 	"scripts": {
@@ -24,7 +24,8 @@
 		"path": "^0.12.7",
 		"quick.db": "^7.1.3",
 		"random": "^3.0.3",
-		"request": "^2.88.2"
+		"request": "^2.88.2",
+		"winston": "^3.3.3"
 	},
 	"devDependencies": {
 		"lint-staged": "^10.5.4",
