@@ -8,6 +8,9 @@ DeluxeBot is a simple Discord bot to help you manage any server, of any size. Se
 
 Update & patches for DeluxeBot
 
+## v1.2.0 (development version, unstable)
+- Added version command. 
+
 ## v1.1.0 (stable)
 
 - Added store, along with two items (medal, bandage)
