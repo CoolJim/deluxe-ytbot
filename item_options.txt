@@ -3,7 +3,6 @@ description: 'string',
 cost: number
 sell: number
 amount: number
-collectable: boolean
 sale: number
 onSale: boolean
 collect: boolean

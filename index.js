@@ -23,11 +23,6 @@ for (const folder of commandFolders) {
 		bot.commands.set(command.name, command);
 	}
 }
-/* Add to array of commands
-for (const file of commandFiles) {
-	const command = require(`./commands/${file}`);
-	bot.commands.set(command.name, command);
-}*/
 
 // Private key
 const key = require("./private/key.json");
