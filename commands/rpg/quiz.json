@@ -1,0 +1,18 @@
+[
+	{
+		"question": "What is the third digit of PI, not counting 3. as a digit?",
+		"answers": ["one", "1", 1, "answeroverride"]
+	},
+	{
+		"question": "Which company's ship got stuck in the Suez Canal in March 2021",
+		"answers": ["evergreen", "EVERGREEN", "Evergreen"]
+	}, 
+    {
+        "question": "As of March 2021, who holds the most grammy awards",
+        "answers": ["beyonce", "Beyonce", "beyo"]
+    },
+    {
+        "question": "Who's the developed of this bot",
+        "answers": ["jim", "windows95", "jimboi2k"]
+    }
+]
