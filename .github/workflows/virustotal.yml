@@ -1,0 +1,17 @@
+- name: VirusTotal GitHub Action
+  # You may pin to the exact commit or the version.
+  # uses: crazy-max/ghaction-virustotal@a3f74cfd584b0658320aec5e94ab6a8d16dca05f
+  uses: crazy-max/ghaction-virustotal@v2.4.1
+  with:
+    # The GitHub token used to create an authenticated client for GitHub API
+    vt_api_key: 
+    # Newline-delimited list of path globs for asset files to upload for analysis
+    files: 
+    # If enabled, files will be uploaded to VirusTotal Monitor endpoint
+    vt_monitor: # optional, default is false
+    # A path relative to current monitor user root folder to upload files
+    monitor_path: # optional, default is /
+    # If enabled, analysis link(s) will be appended to the release body
+    update_release_body: # default is false
+    # The GitHub token used to create an authenticated client for GitHub API
+    github_token: # optional, default is ${{ github.token }}
