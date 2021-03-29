@@ -1,7 +1,7 @@
 <!-- @format -->
 
 # DeluxeBot
-[![VirusTotal Scan](https://github.com/Jimboi2K/deluxe-ytbot/actions/workflows/virustotal.yml/badge.svg?event=push)](https://github.com/Jimboi2K/deluxe-ytbot/actions/workflows/virustotal.yml)
+[![Linter](https://github.com/Jimboi2K/deluxe-ytbot/actions/workflows/lint.yml/badge.svg)](https://github.com/Jimboi2K/deluxe-ytbot/actions/workflows/lint.yml)
 
 
 DeluxeBot is a simple Discord bot to help you manage any server, of any size. See our website [here](deluxebot.netlify.app) for more information
